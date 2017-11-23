@@ -1,6 +1,9 @@
-import { ApiAiClient } from 'api-ai-javascript';
+import { ApiAiClient } from './api-ai-javascript';
 import React, { Component } from 'react';
 import './App.css';
+
+import { default as GrommetApp } from 'grommet/components/App';
+import { Headline, Header, Box, Search } from 'grommet';
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +26,7 @@ class App extends Component {
     this.recognition.addEventListener('result', e => {
       const speech = e.results[e.results.length - 1][0];
       speech.confidence > 0.1 && this.chat(speech.transcript);
+      this.setState({ speak: false }, () => this.recognition.stop());
     });
 
     this.utterance = new SpeechSynthesisUtterance();
@@ -93,9 +97,9 @@ class App extends Component {
     const { conversation, value } = this.state;
 
     return (
-      <div className="App">
+      <GrommetApp centered>
         <header className="App-header">
-          <h1 className="App-title">{`City Yeah`}</h1>
+          <Headline className="App-title">{`City Yeah`}</Headline>
         </header>
         <ul className="App-list">
           {conversation.map((item, index) => {
@@ -108,15 +112,29 @@ class App extends Component {
             );
           })}
         </ul>
+        <Header fixed={false}
+          float={false}
+          splash={true}>
+          <Box flex={true}
+            justify='end'
+            direction='row'
+            responsive={false}>
+            <Search inline={true}
+              fill={true}
+              size='medium'
+              placeHolder='Search'
+              dropAlign={{"right": "right"}} />
+          </Box>
+        </Header>
         <form className="App-form" onSubmit={this.handleSubmit}>
           <input name="user" value={value} onChange={this.handleChange} />
         </form>
         <button
           onClick={this.handleClick}
           style={{ backgroundColor: this.state.speak ? 'red' : '' }}>
-          Speech
+          Parler
         </button>
-      </div>
+      </GrommetApp>
     );
   }
 }
