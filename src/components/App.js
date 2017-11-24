@@ -1,6 +1,6 @@
 import { ApiAiClient } from 'api-ai-javascript';
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 
 import { default as GrommetApp } from 'grommet/components/App';
 import { Headline, Header, Box, Search } from 'grommet';
