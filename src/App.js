@@ -1,4 +1,4 @@
-import { ApiAiClient } from './api-ai-javascript';
+import { ApiAiClient } from 'api-ai-javascript';
 import React, { Component } from 'react';
 import './App.css';
 
