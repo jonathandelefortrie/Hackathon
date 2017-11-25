@@ -115,7 +115,7 @@ class App extends Component {
   render() {
     const { conversation, value } = this.state;
     return (
-      <GrommetApp>
+      <GrommetApp centered={false}>
         <Header>
           <Box
             direction="row"
