@@ -16,6 +16,8 @@ import Columns from 'grommet/components/Columns';
 import Header from 'grommet/components/Header';
 import Animate from 'grommet/components/Animate';
 import Select from 'grommet/components/Select';
+import Card from 'grommet/components/Card';
+import { Icons } from 'grommet';
 
 import './Move.scss';
 
@@ -74,8 +76,7 @@ class Essential extends Component {
       cafat: true,
       tresor: true
     },
-    submitting: false,
-    success: true
+    submitting: false
   };
 
   handleNext = e => {
@@ -132,7 +133,7 @@ class Essential extends Component {
               template: 'cde'
             }
           }).then(() => {
-            this.setState({ submitting: false, success: true });
+            this.setState({ submitting: false, step: this.state.step + 1 });
           });
         });
       });
@@ -234,6 +235,89 @@ class Essential extends Component {
                     label="Besoin d'aide"
                     primary={true}
                     onClick={() => {}}
+                  />
+                </Box>
+              </Columns>
+            </Animate>
+          )}
+          {step === 2 && (
+            <Animate
+              enter={{ animation: 'fade', duration: 1000, delay: 0 }}
+              keep={true}>
+              <Heading align="center">
+                {`Renseigner les informations nécessaire au remplissage des formulaires.`}
+              </Heading>
+              <Columns justify="center" maxCount={2}>
+                <Box pad="medium">
+                  <FormField htmlFor="prenom" label="Prénom">
+                    <TextInput
+                      id="prenom"
+                      name="prenom"
+                      value={user.prenom}
+                      onDOMChange={this.handleChangeUser}
+                    />
+                  </FormField>
+                </Box>
+                <Box pad="medium">
+                  <FormField htmlFor="nom" label="Nom de famille">
+                    <TextInput
+                      id="nom"
+                      name="nom"
+                      value={user.nom}
+                      onDOMChange={this.handleChangeUser}
+                    />
+                  </FormField>
+                </Box>
+                <Box pad="medium">
+                  <FormField htmlFor="email" label="Mail">
+                    <TextInput
+                      id="email"
+                      name="email"
+                      value={user.email}
+                      onDOMChange={this.handleChangeUser}
+                    />
+                  </FormField>
+                </Box>
+                <Box pad="medium">
+                  <FormField htmlFor="tel_mobile" label="Telephone Mobile">
+                    <TextInput
+                      id="tel_mobile"
+                      name="tel_mobile"
+                      value={user.tel_mobile}
+                      onDOMChange={this.handleChangeUser}
+                    />
+                  </FormField>
+                </Box>
+                <Box pad="medium">
+                  <FormField htmlFor="tel_fix" label="Telephone Fix">
+                    <TextInput
+                      id="tel_fix"
+                      name="tel_fix"
+                      value={user.tel_fix}
+                      onDOMChange={this.handleChangeUser}
+                    />
+                  </FormField>
+                </Box>
+                <Box pad="medium">
+                  <FormField htmlFor="tel_bureau" label="Telephone Bureau">
+                    <TextInput
+                      id="tel_bureau"
+                      name="tel_bureau"
+                      value={user.tel_bureau}
+                      onDOMChange={this.handleChangeUser}
+                    />
+                  </FormField>
+                </Box>
+              </Columns>
+              <Columns justify="center" size="medium" maxCount={2}>
+                <Box pad="medium">
+                  <Button label="Revenir" onClick={this.handleBack} />
+                </Box>
+                <Box pad="medium">
+                  <Button
+                    label="Suite"
+                    primary={true}
+                    onClick={this.handleNext}
                   />
                 </Box>
               </Columns>
@@ -372,84 +456,30 @@ class Essential extends Component {
               </Columns>
             </Animate>
           )}
-          {step === 2 && (
+          {step === 4 && (
             <Animate
               enter={{ animation: 'fade', duration: 1000, delay: 0 }}
               keep={true}>
-              <Heading align="center">
-                {`Renseigner les informations nécessaire au remplissage des formulaires.`}
-              </Heading>
-              <Columns justify="center" maxCount={2}>
-                <Box pad="medium">
-                  <FormField htmlFor="prenom" label="Prénom">
-                    <TextInput
-                      id="prenom"
-                      name="prenom"
-                      value={user.prenom}
-                      onDOMChange={this.handleChangeUser}
-                    />
-                  </FormField>
+              <Columns justify="center">
+                <Box>
+                  <Icons.Base.Checkmark size="huge" colorIndex="brand" />
                 </Box>
-                <Box pad="medium">
-                  <FormField htmlFor="nom" label="Nom de famille">
-                    <TextInput
-                      id="nom"
-                      name="nom"
-                      value={user.nom}
-                      onDOMChange={this.handleChangeUser}
-                    />
-                  </FormField>
-                </Box>
-                <Box pad="medium">
-                  <FormField htmlFor="email" label="Mail">
-                    <TextInput
-                      id="email"
-                      name="email"
-                      value={user.email}
-                      onDOMChange={this.handleChangeUser}
-                    />
-                  </FormField>
-                </Box>
-                <Box pad="medium">
-                  <FormField htmlFor="tel_mobile" label="Telephone Mobile">
-                    <TextInput
-                      id="tel_mobile"
-                      name="tel_mobile"
-                      value={user.tel_mobile}
-                      onDOMChange={this.handleChangeUser}
-                    />
-                  </FormField>
-                </Box>
-                <Box pad="medium">
-                  <FormField htmlFor="tel_fix" label="Telephone Fix">
-                    <TextInput
-                      id="tel_fix"
-                      name="tel_fix"
-                      value={user.tel_fix}
-                      onDOMChange={this.handleChangeUser}
-                    />
-                  </FormField>
-                </Box>
-                <Box pad="medium">
-                  <FormField htmlFor="tel_bureau" label="Telephone Bureau">
-                    <TextInput
-                      id="tel_bureau"
-                      name="tel_bureau"
-                      value={user.tel_bureau}
-                      onDOMChange={this.handleChangeUser}
-                    />
-                  </FormField>
-                </Box>
-              </Columns>
-              <Columns justify="center" size="medium" maxCount={2}>
-                <Box pad="medium">
-                  <Button label="Revenir" onClick={this.handleBack} />
-                </Box>
-                <Box pad="medium">
-                  <Button
-                    label="Suite"
-                    primary={true}
-                    onClick={this.handleNext}
+                <Box>
+                  <Card
+                    heading={
+                      <Heading>
+                        Félicitations les formulaires sont prêts.
+                      </Heading>
+                    }
+                    description="HPE can help you benefit now from your right mix of cloud"
+                    size="large"
+                    link={
+                      <Anchor
+                        href="/user"
+                        primary={true}
+                        label="Obtenir les documents"
+                      />
+                    }
                   />
                 </Box>
               </Columns>
@@ -478,7 +508,7 @@ class Move extends Component {
       <div className="Move">
         <Box full={true} flex={false}>
           <Header pad="medium">
-            <Box flex={true} justify="start" direction="row" responsive={false}>
+            <Box flex={true} justify="start" direction="row">
               {this.props.location.pathname.split('/').map((item, index) => {
                 index !== 0 && (path += `/${item}`);
                 return index === 0 ? (
@@ -487,6 +517,13 @@ class Move extends Component {
                   <Anchor key={index} href={path} label={`/${item}`} />
                 );
               })}
+            </Box>
+            <Box direction="row" align="center" pad={{ between: 'medium' }}>
+              <Menu direction="row" size="small" dropAlign={{ right: 'right' }}>
+                <Anchor href="#">Solution</Anchor>
+                <Anchor href="#">Services</Anchor>
+                <Anchor href="#">Assistance</Anchor>
+              </Menu>
             </Box>
           </Header>
           {!params.type && <Question onNext={this.handleNext} />}
@@ -497,8 +534,7 @@ class Move extends Component {
             <Title>City Yeah</Title>
             <Box direction="row" align="center" pad={{ between: 'medium' }}>
               <Menu direction="row" size="small" dropAlign={{ right: 'right' }}>
-                <Anchor href="#">A notre sujet</Anchor>
-                <Anchor href="#">Nous contactez</Anchor>
+                <Anchor href="#">{`Besoin d'aide`}</Anchor>
               </Menu>
             </Box>
           </Footer>
