@@ -523,7 +523,7 @@ class Move extends Component {
             <Essential onNext={this.handleNext} />
           )}
           <Footer justify="between" pad="medium">
-            <Title>City Yeah</Title>
+            <Title>e-City Yeah</Title>
             <Box direction="row" align="center" pad={{ between: 'medium' }}>
               <Menu direction="row" size="small" dropAlign={{ right: 'right' }}>
                 <Anchor href="#">{`Besoin d'aide`}</Anchor>

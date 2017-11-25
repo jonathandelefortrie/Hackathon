@@ -22,7 +22,7 @@ export default ({ logged }) => {
           <Menu label="Label" inline={true} direction="row" flex="grow">
             <Title>
               <Anchor href="/" style={{ color: '#333' }}>
-                City Yeah!
+                e-City Yeah!
               </Anchor>
             </Title>
             <Anchor href="#">Mes infos</Anchor>
@@ -44,7 +44,7 @@ export default ({ logged }) => {
           <Menu label="Label" inline={true} direction="row" flex="grow">
             <Title>
               <Anchor href="/" style={{ color: '#333' }}>
-                City Yeah!
+                e-City Yeah!
               </Anchor>
             </Title>
             <Anchor href="#">Solutions</Anchor>
