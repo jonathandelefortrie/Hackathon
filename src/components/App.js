@@ -3,7 +3,26 @@ import React, { Component } from 'react';
 import './App.scss';
 
 import { default as GrommetApp } from 'grommet/components/App';
-import { Headline, Header, Box, Search } from 'grommet';
+import {
+  Hero,
+  Headline,
+  Image,
+  Heading,
+  Header,
+  Box,
+  SearchInput,
+  Form,
+  Title,
+  Search,
+  FormField,
+  TextInput,
+  Button,
+  List,
+  ListItem,
+  Columns,
+  Split,
+  Icons
+} from 'grommet';
 
 class App extends Component {
   constructor(props) {
@@ -67,7 +86,7 @@ class App extends Component {
             const text =
               result.score > 0
                 ? result.fulfillment.speech
-                : 'Je n\'ai absolument rien compris.';
+                : "Je n'ai absolument rien compris.";
 
             this.utterance.text = text;
             window.speechSynthesis.speak(this.utterance);
@@ -95,45 +114,42 @@ class App extends Component {
 
   render() {
     const { conversation, value } = this.state;
-
     return (
-      <GrommetApp centered>
-        <header className="App-header">
-          <Headline className="App-title">{`City Yeah`}</Headline>
-        </header>
-        <ul className="App-list">
-          {conversation.map((item, index) => {
-            return (
-              <li
-                key={index}
-                className={`App-list-item App-list-item--${item.type}`}>
-                <span>{item.text}</span>
-              </li>
-            );
-          })}
-        </ul>
-        <Header fixed={false}
-          float={false}
-          splash={true}>
-          <Box flex={true}
-            justify='end'
-            direction='row'
-            responsive={false}>
-            <Search inline={true}
-              fill={true}
-              size='medium'
-              placeHolder='Search'
-              dropAlign={{"right": "right"}} />
+      <GrommetApp>
+        <Header>
+          <Box
+            direction="row"
+            full="horizontal"
+            justify="center"
+            align="center">
+            <Form onSubmit={this.handleSubmit}>
+              <FormField>
+                <TextInput
+                  id="user"
+                  name="user"
+                  value={value}
+                  onDOMChange={this.handleChange}
+                />
+              </FormField>
+            </Form>
+            <Button
+              icon={<Icons.Base.Microphone />}
+              onClick={this.handleClick}
+              primary={this.state.speak}
+            />
           </Box>
         </Header>
-        <form className="App-form" onSubmit={this.handleSubmit}>
-          <input name="user" value={value} onChange={this.handleChange} />
-        </form>
-        <button
-          onClick={this.handleClick}
-          style={{ backgroundColor: this.state.speak ? 'red' : '' }}>
-          Parler
-        </button>
+        <List>
+          {conversation.map((item, index) => {
+            return (
+              <ListItem
+                key={index}
+                justify={item.type === 'user' ? 'end' : 'start'}>
+                <span>{item.text}</span>
+              </ListItem>
+            );
+          })}
+        </List>
       </GrommetApp>
     );
   }
