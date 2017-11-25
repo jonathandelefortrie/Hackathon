@@ -264,7 +264,7 @@ class Address extends Component {
             )}
           </Box>
           <Footer justify="between" pad="medium">
-            <Title>e-City Yeah</Title>
+            <Title>eCity Yeah</Title>
             <Box direction="row" align="center" pad={{ between: 'medium' }}>
               <Menu direction="row" size="small" dropAlign={{ right: 'right' }}>
                 <Anchor href="#">{`Besoin d'aide`}</Anchor>

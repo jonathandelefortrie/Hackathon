@@ -97,10 +97,10 @@ class Essential extends Component {
     this.setState({ services: { ...this.state.services, [name]: checked } });
   };
 
-  handleChangeUser = e => {
-    const { name, value } = e.target;
+  handleChangeUser = ({ target, option }) => {
+    const { name, value } = target;
 
-    this.setState({ user: { ...this.state.user, [name]: value } });
+    this.setState({ user: { ...this.state.user, [name]: option || value } });
   };
 
   handleSubmit = e => {
@@ -523,7 +523,7 @@ class Move extends Component {
             <Essential onNext={this.handleNext} />
           )}
           <Footer justify="between" pad="medium">
-            <Title>e-City Yeah</Title>
+            <Title>eCity Yeah</Title>
             <Box direction="row" align="center" pad={{ between: 'medium' }}>
               <Menu direction="row" size="small" dropAlign={{ right: 'right' }}>
                 <Anchor href="#">{`Besoin d'aide`}</Anchor>

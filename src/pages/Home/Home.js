@@ -12,6 +12,8 @@ import Form from '../../components/Form';
 
 import './Home.scss';
 
+import hero from '../../hero.jpg';
+
 class Home extends Component {
   render() {
     return (
@@ -20,7 +22,7 @@ class Home extends Component {
           <Header />
           <Hero
             className="Home__hero"
-            backgroundImage="https://www.legalstart.fr/static/images-minified/head-home.54e61dccc784.png">
+            backgroundImage={hero}>
             <Heading strong={true}>Facilitez vous la ville</Heading>
             <Form history={this.props.history} />
           </Hero>
@@ -31,7 +33,7 @@ class Home extends Component {
               textAlign="center"
               size={{ width: { max: 'xxlarge' } }}>
               <Heading tag="h1" margin="none">
-                e-City Yeah, mes démarches et mes services de proximité à portée
+                eCity Yeah, mes démarches et mes services de proximité à portée
                 de clic.
               </Heading>
             </Box>

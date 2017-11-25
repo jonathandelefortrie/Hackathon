@@ -7,6 +7,8 @@ import Anchor from 'grommet/components/Anchor';
 import Menu from 'grommet/components/Menu';
 import Box from 'grommet/components/Box';
 
+import Logo from './Logo';
+
 export default ({ logged }) => {
   return (
     <Header justify="center">
@@ -19,12 +21,10 @@ export default ({ logged }) => {
           align="center"
           pad={{ horizontal: 'medium' }}
           flex="grow">
+          <Anchor href="/" style={{ width: '150px' }}>
+            <Logo />
+          </Anchor>
           <Menu label="Label" inline={true} direction="row" flex="grow">
-            <Title>
-              <Anchor href="/" style={{ color: '#333' }}>
-                e-City Yeah!
-              </Anchor>
-            </Title>
             <Anchor href="#">Mes infos</Anchor>
             <Anchor href="#">Mes documents</Anchor>
           </Menu>
@@ -41,12 +41,10 @@ export default ({ logged }) => {
           align="center"
           pad={{ horizontal: 'medium' }}
           flex="grow">
+          <Anchor href="/" style={{ width: '150px' }}>
+            <Logo />
+          </Anchor>
           <Menu label="Label" inline={true} direction="row" flex="grow">
-            <Title>
-              <Anchor href="/" style={{ color: '#333' }}>
-                e-City Yeah!
-              </Anchor>
-            </Title>
             <Anchor href="#">Solutions</Anchor>
             <Anchor href="#">Services</Anchor>
             <Anchor href="#">Assistance</Anchor>
