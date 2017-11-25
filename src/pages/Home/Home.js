@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import GrommetApp from 'grommet/components/App';
 import Anchor from 'grommet/components/Anchor';
 import Box from 'grommet/components/Box';
 import Card from 'grommet/components/Card';
@@ -10,31 +9,22 @@ import Hero from 'grommet/components/Hero';
 import Paragraph from 'grommet/components/Paragraph';
 
 import Header from '../../components/Header';
+import Form from '../../components/Form';
+
+import './Home.scss';
 
 class Home extends Component {
   render() {
     return (
-      <GrommetApp centered={false}>
+      <div className="Home">
         <Box>
           <Header />
-          <Box>
-            <Hero
-              size="large"
-              backgroundImage="https://www.legalstart.fr/static/images-minified/head-home.54e61dccc784.png"
-              colorIndex="light-1">
-              <Card
-                heading={
-                  <Heading strong={true}>
-                    Accelerate your transformation with the cloud
-                  </Heading>
-                }
-                description="HPE can help you benefit now from your right mix of cloud"
-                label="label"
-                size="large"
-                link={<Anchor href="#" primary={true} label="Learn More" />}
-              />
-            </Hero>
-          </Box>
+          <Hero
+            className="Home__hero"
+            backgroundImage="https://www.legalstart.fr/static/images-minified/head-home.54e61dccc784.png">
+            <Heading strong={true}>Mes demarches en plus simple!</Heading>
+            <Form history={this.props.history} />
+          </Hero>
           <Box align="center">
             <Box
               pad="large"
@@ -63,7 +53,7 @@ class Home extends Component {
           </Box>
           <Footer full="horizontal">
             <Box
-              colorIndex="neutral-1"
+              colorIndex="brand"
               pad="large"
               align="center"
               full="horizontal">
@@ -102,7 +92,7 @@ class Home extends Component {
             </Box>
           </Footer>
         </Box>
-      </GrommetApp>
+      </div>
     );
   }
 }

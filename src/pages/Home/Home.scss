@@ -1,0 +1,17 @@
+.Home {
+  &__hero > div:nth-child(2) {
+    justify-content: center;
+
+    & > div:nth-child(2) {
+      display: none;
+    }
+
+    & > div:nth-child(3) {
+      width: 70%;
+      text-align: center;
+      flex-basis: initial;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, .5);
+    }
+  }
+}

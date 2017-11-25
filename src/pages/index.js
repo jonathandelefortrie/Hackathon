@@ -1,3 +1,4 @@
 import Home from './Home/Home';
+import Move from './Move/Move';
 
-export default { Home };
+export default { Home, Move };
