@@ -8,7 +8,7 @@ export default (
     <Router>
       <div>
         <Route exact path="/" component={pages.Home} />
-        <Route path="/demenage" component={pages.Move} />
+        <Route path="/demenage/:type?" component={pages.Move} />
       </div>
     </Router>
   </App>

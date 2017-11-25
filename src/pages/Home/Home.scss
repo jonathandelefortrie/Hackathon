@@ -7,11 +7,18 @@
     }
 
     & > div:nth-child(3) {
-      width: 70%;
       text-align: center;
       flex-basis: initial;
       justify-content: center;
-      background-color: rgba(0, 0, 0, .5);
+
+      & > div:nth-child(2) {
+        flex-direction: initial;
+      }
+
+      @media screen and (min-width: 768px) {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 70%;
+      }
     }
   }
 }

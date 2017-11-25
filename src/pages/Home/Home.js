@@ -22,7 +22,7 @@ class Home extends Component {
           <Hero
             className="Home__hero"
             backgroundImage="https://www.legalstart.fr/static/images-minified/head-home.54e61dccc784.png">
-            <Heading strong={true}>Mes demarches en plus simple!</Heading>
+            <Heading strong={true}>Facilitez vous la ville!</Heading>
             <Form history={this.props.history} />
           </Hero>
           <Box align="center">
@@ -32,7 +32,8 @@ class Home extends Component {
               textAlign="center"
               size={{ width: { max: 'xxlarge' } }}>
               <Heading tag="h1" strong={true} margin="none">
-                Sumo accumsan mel ignota hendrerit.
+                City Yeah, mes démarches et mes services de proximité à portée
+                de clic.
               </Heading>
               <Paragraph size="xlarge" width="large">
                 Lorem ipsum dolor sit amet, dicat sonet congue ei mei, est summo
