@@ -67,14 +67,14 @@ class Essential extends Component {
       commune: ''
     },
     services: {
-      mairie: true,
-      cde: true,
-      eec: true,
-      enercal: true,
-      dittt: true,
-      dsf: true,
-      cafat: true,
-      tresor: true
+      mairie: false,
+      cde: false,
+      eec: false,
+      enercal: false,
+      dittt: false,
+      dsf: false,
+      cafat: false,
+      tresor: false
     },
     submitting: false
   };
@@ -126,15 +126,7 @@ class Essential extends Component {
             ...user
           }
         }).then(() => {
-          axios({
-            method: 'post',
-            url: 'http://10.10.13.213:8000/api/pdf',
-            data: {
-              template: 'cde'
-            }
-          }).then(() => {
-            this.setState({ submitting: false, step: this.state.step + 1 });
-          });
+          this.setState({ submitting: false, step: this.state.step + 1 });
         });
       });
     });
@@ -461,7 +453,7 @@ class Essential extends Component {
               enter={{ animation: 'fade', duration: 1000, delay: 0 }}
               keep={true}>
               <Columns justify="center">
-                <Box>
+                <Box className="checkmark">
                   <Icons.Base.Checkmark size="huge" colorIndex="brand" />
                 </Box>
                 <Box>
