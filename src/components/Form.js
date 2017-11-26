@@ -17,14 +17,14 @@ export default ({ history }) => {
     <Columns justify="center" size="medium" maxCount={2}>
       <Box pad="medium">
         <Button
-          label="Je demenage"
+          label="Je déménage"
           primary={true}
           onClick={handleRedirect('demenage')}
         />
       </Box>
       <Box pad="medium">
         <Button
-          label="Trouver des addresses"
+          label="Dans ma ville"
           primary={true}
           onClick={handleRedirect('adresses')}
         />

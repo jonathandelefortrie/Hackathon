@@ -5,7 +5,6 @@ export default () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
-      height="100%"
       viewBox="0 0 841.89 595.28">
       <g id="Calque_4" />
       <g id="Calque_2">
@@ -21,8 +20,8 @@ export default () => {
             x="0"
             y="0"
             fill="#333333"
-            font-family="'Comfortaa-Regular'"
-            font-size="110">
+            fontFamily="'Comfortaa-Regular'"
+            fontSize="110">
             CITY
           </tspan>
           <tspan
@@ -30,17 +29,17 @@ export default () => {
             y="120"
             fill="#FBC01C"
             stroke="#F8B334"
-            font-family="'Comfortaa-Bold'"
-            font-size="147"
-            letter-spacing="-7">
+            fontFamily="'Comfortaa-Bold'"
+            fontSize="147"
+            letterSpacing="-7">
             {' '}
           </tspan>
           <tspan
             x="36"
             y="120"
             fill="#755CA0"
-            font-family="'Comfortaa-Bold'"
-            font-size="164">
+            fontFamily="'Comfortaa-Bold'"
+            fontSize="164">
             yeah !
           </tspan>
         </text>

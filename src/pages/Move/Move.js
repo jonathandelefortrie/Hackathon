@@ -6,8 +6,8 @@ import Box from 'grommet/components/Box';
 import Footer from 'grommet/components/Footer';
 import Heading from 'grommet/components/Heading';
 import Menu from 'grommet/components/Menu';
-import Title from 'grommet/components/Title';
 import Form from 'grommet/components/Form';
+import Paragraph from 'grommet/components/Paragraph';
 import FormField from 'grommet/components/FormField';
 import TextInput from 'grommet/components/TextInput';
 import CheckBox from 'grommet/components/CheckBox';
@@ -20,6 +20,8 @@ import Card from 'grommet/components/Card';
 import { Icons } from 'grommet';
 
 import './Move.scss';
+
+import Logo from '../../components/Logo';
 
 const Question = ({ onNext }) => {
   return (
@@ -37,9 +39,10 @@ const Question = ({ onNext }) => {
             />
           </Box>
           <Box pad="medium">
-            <Button label="Complementaire" primary={true} onClick={() => {}} />
+            <Button label="Recommandé" primary={true} onClick={() => {}} />
           </Box>
         </Columns>
+        <Paragraph align="center" style={{ margin: 'auto' }}>Un formulaire unique pour toutes vos démarches.</Paragraph>
       </Animate>
     </Box>
   );
@@ -143,68 +146,84 @@ class Essential extends Component {
               enter={{ animation: 'fade', duration: 1000, delay: 0 }}
               keep={true}>
               <Heading align="center">
-                {`Selectionner les organismes à prevenir de votre démenagement.`}
+                {`Selectionnez les organismes à prévenir de votre déménagement.`}
               </Heading>
               <Columns size="medium" justify="center" maxCount={2}>
-                <Box basis="1/2" pad="medium" margin="small">
-                  <CheckBox
-                    label="Mairie"
-                    name="mairie"
-                    toggle={true}
-                    checked={services.mairie}
-                    onChange={this.handleChangeServices}
-                  />
-                  <CheckBox
-                    label="CDE"
-                    name="cde"
-                    toggle={true}
-                    checked={services.cde}
-                    onChange={this.handleChangeServices}
-                  />
-                  <CheckBox
-                    label="EEC"
-                    name="eec"
-                    toggle={true}
-                    checked={services.eec}
-                    onChange={this.handleChangeServices}
-                  />
-                  <CheckBox
-                    label="Enercal"
-                    name="enercal"
-                    toggle={true}
-                    checked={services.enercal}
-                    onChange={this.handleChangeServices}
-                  />
+                <Box basis="1/2" margin="small">
+                  <Box pad="medium">
+                    <CheckBox
+                      label="Mairie"
+                      name="mairie"
+                      toggle={true}
+                      checked={services.mairie}
+                      onChange={this.handleChangeServices}
+                    />
+                  </Box>
+                  <Box pad="medium">
+                    <CheckBox
+                      label="CDE"
+                      name="cde"
+                      toggle={true}
+                      checked={services.cde}
+                      onChange={this.handleChangeServices}
+                    />
+                  </Box>
+                  <Box pad="medium">
+                    <CheckBox
+                      label="EEC"
+                      name="eec"
+                      toggle={true}
+                      checked={services.eec}
+                      onChange={this.handleChangeServices}
+                    />
+                  </Box>
+                  <Box pad="medium">
+                    <CheckBox
+                      label="Enercal"
+                      name="enercal"
+                      toggle={true}
+                      checked={services.enercal}
+                      onChange={this.handleChangeServices}
+                    />
+                  </Box>
                 </Box>
-                <Box basis="1/2" pad="medium" margin="small">
-                  <CheckBox
-                    label="DITTT"
-                    name="dittt"
-                    toggle={true}
-                    checked={services.dittt}
-                    onChange={this.handleChangeServices}
-                  />
-                  <CheckBox
-                    label="DSF"
-                    name="dsf"
-                    toggle={true}
-                    checked={services.dsf}
-                    onChange={this.handleChangeServices}
-                  />
-                  <CheckBox
-                    label="CAFAT"
-                    name="cafat"
-                    toggle={true}
-                    checked={services.cafat}
-                    onChange={this.handleChangeServices}
-                  />
-                  <CheckBox
-                    label="Tresor Public"
-                    name="tresor"
-                    toggle={true}
-                    checked={services.tresor}
-                    onChange={this.handleChangeServices}
-                  />
+                <Box basis="1/2" margin="small">
+                  <Box pad="medium">
+                    <CheckBox
+                      label="DITTT"
+                      name="dittt"
+                      toggle={true}
+                      checked={services.dittt}
+                      onChange={this.handleChangeServices}
+                    />
+                  </Box>
+                  <Box pad="medium">
+                    <CheckBox
+                      label="DSF"
+                      name="dsf"
+                      toggle={true}
+                      checked={services.dsf}
+                      onChange={this.handleChangeServices}
+                    />
+                  </Box>
+                  <Box pad="medium">
+                    <CheckBox
+                      label="CAFAT"
+                      name="cafat"
+                      toggle={true}
+                      checked={services.cafat}
+                      onChange={this.handleChangeServices}
+                    />
+                  </Box>
+                  <Box pad="medium">
+                    <CheckBox
+                      label="Tresor Public"
+                      name="tresor"
+                      toggle={true}
+                      checked={services.tresor}
+                      onChange={this.handleChangeServices}
+                    />
+                  </Box>
                 </Box>
               </Columns>
               <Columns justify="center" size="medium" maxCount={2}>
@@ -237,7 +256,7 @@ class Essential extends Component {
               enter={{ animation: 'fade', duration: 1000, delay: 0 }}
               keep={true}>
               <Heading align="center">
-                {`Renseigner les informations nécessaire au remplissage des formulaires.`}
+                {`Renseignez les informations nécessaires.`}
               </Heading>
               <Columns justify="center" maxCount={2}>
                 <Box pad="medium">
@@ -271,7 +290,7 @@ class Essential extends Component {
                   </FormField>
                 </Box>
                 <Box pad="medium">
-                  <FormField htmlFor="tel_mobile" label="Telephone Mobile">
+                  <FormField htmlFor="tel_mobile" label="Mobilis">
                     <TextInput
                       id="tel_mobile"
                       name="tel_mobile"
@@ -281,7 +300,7 @@ class Essential extends Component {
                   </FormField>
                 </Box>
                 <Box pad="medium">
-                  <FormField htmlFor="tel_fix" label="Telephone Fix">
+                  <FormField htmlFor="tel_fix" label="Téléphone fixe">
                     <TextInput
                       id="tel_fix"
                       name="tel_fix"
@@ -291,7 +310,7 @@ class Essential extends Component {
                   </FormField>
                 </Box>
                 <Box pad="medium">
-                  <FormField htmlFor="tel_bureau" label="Telephone Bureau">
+                  <FormField htmlFor="tel_bureau" label="Téléphone bureau">
                     <TextInput
                       id="tel_bureau"
                       name="tel_bureau"
@@ -303,11 +322,11 @@ class Essential extends Component {
               </Columns>
               <Columns justify="center" size="medium" maxCount={2}>
                 <Box pad="medium">
-                  <Button label="Revenir" onClick={this.handleBack} />
+                  <Button label="Précédent" onClick={this.handleBack} />
                 </Box>
                 <Box pad="medium">
                   <Button
-                    label="Suite"
+                    label="Suivant"
                     primary={true}
                     onClick={this.handleNext}
                   />
@@ -320,7 +339,7 @@ class Essential extends Component {
               enter={{ animation: 'fade', duration: 1000, delay: 0 }}
               keep={true}>
               <Heading align="center">
-                {`Renseigner les informations nécessaire au remplissage des formulaires.`}
+                {`Renseignez les informations nécessaires.`}
               </Heading>
               <Columns justify="center" size="large">
                 <Box pad="medium" direction="row">
@@ -435,7 +454,7 @@ class Essential extends Component {
               </Columns>
               <Columns justify="center" size="medium" maxCount={2}>
                 <Box pad="medium">
-                  <Button label="Revenir" onClick={this.handleBack} />
+                  <Button label="Précédent" onClick={this.handleBack} />
                 </Box>
                 <Box pad="medium">
                   <Button
@@ -460,10 +479,10 @@ class Essential extends Component {
                   <Card
                     heading={
                       <Heading>
-                        Félicitations les formulaires sont prêts.
+                        Félicitations Mr. Joe Doe vos formulaires sont prêts.
                       </Heading>
                     }
-                    description="HPE can help you benefit now from your right mix of cloud"
+                    description="Vous recevrez un email avec vos identifiants de compte eCity Yeah."
                     size="large"
                     link={
                       <Anchor
@@ -523,7 +542,9 @@ class Move extends Component {
             <Essential onNext={this.handleNext} />
           )}
           <Footer justify="between" pad="medium">
-            <Title>eCity Yeah</Title>
+            <Anchor href="/" style={{ width: '100px', height: '50px' }}>
+              <Logo />
+            </Anchor>
             <Box direction="row" align="center" pad={{ between: 'medium' }}>
               <Menu direction="row" size="small" dropAlign={{ right: 'right' }}>
                 <Anchor href="#">{`Besoin d'aide`}</Anchor>

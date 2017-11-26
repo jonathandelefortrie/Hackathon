@@ -5,7 +5,6 @@ import Box from 'grommet/components/Box';
 import Footer from 'grommet/components/Footer';
 import Heading from 'grommet/components/Heading';
 import Menu from 'grommet/components/Menu';
-import Title from 'grommet/components/Title';
 import FormField from 'grommet/components/FormField';
 import TextInput from 'grommet/components/TextInput';
 import CheckBox from 'grommet/components/CheckBox';
@@ -17,6 +16,7 @@ import ListItem from 'grommet/components/ListItem';
 
 import './Address.scss';
 
+import Logo from '../../components/Logo';
 import scriptLoader from '../../libs/scriptLoader';
 
 class AddressMap extends Component {
@@ -102,7 +102,7 @@ class AddressMap extends Component {
       <Animate
         enter={{ animation: 'fade', duration: 1000, delay: 0 }}
         keep={true}>
-        <Heading align="center">{`Selectionner les services à afficher.`}</Heading>
+        <Heading align="center">{`Selectionnez les services à afficher.`}</Heading>
         <Columns justify="center" size="large">
           <Box pad="large" ref="AddressMap" className="map" margin="small" />
           <Box pad="large" margin="small">
@@ -202,7 +202,7 @@ class AddressSearch extends Component {
       <Animate
         enter={{ animation: 'fade', duration: 1000, delay: 0 }}
         keep={true}>
-        <Heading align="center">{`Quel est votre adresse?`}</Heading>
+        <Heading align="center">{`Quel est votre localisation?`}</Heading>
         <Columns justify="center" size="large">
           <Box pad="medium">
             <FormField htmlFor="adresses">
@@ -264,7 +264,9 @@ class Address extends Component {
             )}
           </Box>
           <Footer justify="between" pad="medium">
-            <Title>eCity Yeah</Title>
+            <Anchor href="/" style={{ width: '100px', height: '50px' }}>
+              <Logo />
+            </Anchor>
             <Box direction="row" align="center" pad={{ between: 'medium' }}>
               <Menu direction="row" size="small" dropAlign={{ right: 'right' }}>
                 <Anchor href="#">{`Besoin d'aide`}</Anchor>

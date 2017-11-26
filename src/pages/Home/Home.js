@@ -34,7 +34,7 @@ class Home extends Component {
               size={{ width: { max: 'xxlarge' } }}>
               <Heading tag="h1" margin="none">
                 eCity Yeah, mes démarches et mes services de proximité à portée
-                de clic.
+                de clic
               </Heading>
             </Box>
           </Box>
@@ -63,12 +63,12 @@ class Home extends Component {
                 <Card
                   pad={{ horizontal: 'large' }}
                   contentPad="medium"
-                  heading="Lorem ipsum dolor sit amet"
-                  label="Label"
+                  heading="Localiser les organismes"
+                  label="Informer"
                   basis="1/2"
                   link={
                     <Anchor href="http://www.grommet.io/docs/" primary={true}>
-                      Learn More
+                      En savoir plus
                     </Anchor>
                   }
                   separator="right"
@@ -76,12 +76,12 @@ class Home extends Component {
                 <Card
                   pad={{ horizontal: 'large' }}
                   contentPad="medium"
-                  heading="Lorem ipsum dolor sit amet"
-                  label="Label"
+                  heading="Commander un concierge"
+                  label="Conseiller"
                   basis="1/2"
                   link={
                     <Anchor href="http://www.grommet.io/docs/" primary={true}>
-                      Learn More
+                      En savoir plus
                     </Anchor>
                   }
                 />

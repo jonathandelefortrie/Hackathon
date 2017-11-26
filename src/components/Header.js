@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Header from 'grommet/components/Header';
-import Title from 'grommet/components/Title';
 import Button from 'grommet/components/Button';
 import Anchor from 'grommet/components/Anchor';
 import Menu from 'grommet/components/Menu';
@@ -21,15 +20,15 @@ export default ({ logged }) => {
           align="center"
           pad={{ horizontal: 'medium' }}
           flex="grow">
-          <Anchor href="/" style={{ width: '150px' }}>
+          <Anchor href="/" style={{ width: '150px', height: '50px' }}>
             <Logo />
           </Anchor>
           <Menu label="Label" inline={true} direction="row" flex="grow">
-            <Anchor href="#">Mes infos</Anchor>
+            <Anchor href="#">Mon compte</Anchor>
             <Anchor href="#">Mes documents</Anchor>
           </Menu>
           <Box flex="grow" align="end">
-            Jonathan Delefortrie
+            Bienvenue Joe Doe
           </Box>
         </Box>
       ) : (
@@ -41,7 +40,7 @@ export default ({ logged }) => {
           align="center"
           pad={{ horizontal: 'medium' }}
           flex="grow">
-          <Anchor href="/" style={{ width: '150px' }}>
+          <Anchor href="/" style={{ width: '150px', height: '100px' }}>
             <Logo />
           </Anchor>
           <Menu label="Label" inline={true} direction="row" flex="grow">
