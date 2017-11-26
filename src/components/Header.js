@@ -20,7 +20,7 @@ export default ({ logged }) => {
           align="center"
           pad={{ horizontal: 'medium' }}
           flex="grow">
-          <Anchor href="/" style={{ width: '150px', height: '50px' }}>
+          <Anchor href="/" style={{ width: '150px', height: '100px' }}>
             <Logo />
           </Anchor>
           <Menu label="Label" inline={true} direction="row" flex="grow">

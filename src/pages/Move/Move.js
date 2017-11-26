@@ -17,11 +17,21 @@ import Header from 'grommet/components/Header';
 import Animate from 'grommet/components/Animate';
 import Select from 'grommet/components/Select';
 import Card from 'grommet/components/Card';
+import Image from 'grommet/components/Image';
 import { Icons } from 'grommet';
 
 import './Move.scss';
 
 import Logo from '../../components/Logo';
+
+import dittt from '../../logos/dittt.png';
+import dsf from '../../logos/dsf.png';
+import cde from '../../logos/cde.png';
+import eec from '../../logos/eec.png';
+import cafat from '../../logos/cafat.png';
+import enercal from '../../logos/enercal.png';
+import provinceSud from '../../logos/province-sud.png';
+import villeDeNoumea from '../../logos/ville-de-noumea.png';
 
 const Question = ({ onNext }) => {
   return (
@@ -42,7 +52,9 @@ const Question = ({ onNext }) => {
             <Button label="Recommandé" primary={true} onClick={() => {}} />
           </Box>
         </Columns>
-        <Paragraph align="center" style={{ margin: 'auto' }}>Un formulaire unique pour toutes vos démarches.</Paragraph>
+        <Paragraph align="center" style={{ margin: 'auto' }}>
+          Un formulaire unique pour toutes vos démarches.
+        </Paragraph>
       </Animate>
     </Box>
   );
@@ -77,7 +89,7 @@ class Essential extends Component {
       dittt: false,
       dsf: false,
       cafat: false,
-      tresor: false
+      province_sud: false
     },
     submitting: false
   };
@@ -150,79 +162,111 @@ class Essential extends Component {
               </Heading>
               <Columns size="medium" justify="center" maxCount={2}>
                 <Box basis="1/2" margin="small">
-                  <Box pad="medium">
-                    <CheckBox
-                      label="Mairie"
-                      name="mairie"
-                      toggle={true}
-                      checked={services.mairie}
-                      onChange={this.handleChangeServices}
-                    />
+                  <Box pad="medium" direction="row">
+                    <Box>
+                      <CheckBox
+                        name="villeDeNoumea"
+                        toggle={true}
+                        checked={services.villeDeNoumea}
+                        onChange={this.handleChangeServices}
+                      />
+                    </Box>
+                    <Box>
+                      <Image src={villeDeNoumea} style={{ width: '30px' }} />
+                    </Box>
                   </Box>
-                  <Box pad="medium">
-                    <CheckBox
-                      label="CDE"
-                      name="cde"
-                      toggle={true}
-                      checked={services.cde}
-                      onChange={this.handleChangeServices}
-                    />
+                  <Box pad="medium" direction="row">
+                    <Box>
+                      <CheckBox
+                        name="cde"
+                        toggle={true}
+                        checked={services.cde}
+                        onChange={this.handleChangeServices}
+                      />
+                    </Box>
+                    <Box>
+                      <Image src={cde} style={{ width: '70px' }} />
+                    </Box>
                   </Box>
-                  <Box pad="medium">
-                    <CheckBox
-                      label="EEC"
-                      name="eec"
-                      toggle={true}
-                      checked={services.eec}
-                      onChange={this.handleChangeServices}
-                    />
+                  <Box pad="medium" direction="row">
+                    <Box>
+                      <CheckBox
+                        name="enercal"
+                        toggle={true}
+                        checked={services.enercal}
+                        onChange={this.handleChangeServices}
+                      />
+                    </Box>
+                    <Box>
+                      <Image src={enercal} style={{ width: '60px' }} />
+                    </Box>
                   </Box>
-                  <Box pad="medium">
-                    <CheckBox
-                      label="Enercal"
-                      name="enercal"
-                      toggle={true}
-                      checked={services.enercal}
-                      onChange={this.handleChangeServices}
-                    />
+                  <Box pad="medium" direction="row">
+                    <Box>
+                      <CheckBox
+                        name="eec"
+                        toggle={true}
+                        checked={services.eec}
+                        onChange={this.handleChangeServices}
+                      />
+                    </Box>
+                    <Box>
+                      <Image src={eec} style={{ width: '60px' }} />
+                    </Box>
                   </Box>
                 </Box>
                 <Box basis="1/2" margin="small">
-                  <Box pad="medium">
-                    <CheckBox
-                      label="DITTT"
-                      name="dittt"
-                      toggle={true}
-                      checked={services.dittt}
-                      onChange={this.handleChangeServices}
-                    />
+                  <Box pad="medium" direction="row">
+                    <Box>
+                      <CheckBox
+                        name="dittt"
+                        toggle={true}
+                        checked={services.dittt}
+                        onChange={this.handleChangeServices}
+                      />
+                    </Box>
+                    <Box>
+                      <Image src={dittt} style={{ width: '100px' }} />
+                    </Box>
                   </Box>
-                  <Box pad="medium">
-                    <CheckBox
-                      label="DSF"
-                      name="dsf"
-                      toggle={true}
-                      checked={services.dsf}
-                      onChange={this.handleChangeServices}
-                    />
+                  <Box pad="medium" direction="row">
+                    <Box>
+                      <CheckBox
+                        name="dsf"
+                        toggle={true}
+                        checked={services.dsf}
+                        onChange={this.handleChangeServices}
+                      />
+                    </Box>
+                    <Box>
+                      <Image src={dsf} style={{ width: '100px' }} />
+                    </Box>
                   </Box>
-                  <Box pad="medium">
-                    <CheckBox
-                      label="CAFAT"
-                      name="cafat"
-                      toggle={true}
-                      checked={services.cafat}
-                      onChange={this.handleChangeServices}
-                    />
+                  <Box pad="medium" direction="row">
+                    <Box>
+                      <CheckBox
+                        name="cafat"
+                        toggle={true}
+                        checked={services.cafat}
+                        onChange={this.handleChangeServices}
+                      />
+                    </Box>
+                    <Box>
+                      <Image src={cafat} style={{ width: '60px' }} />
+                    </Box>
                   </Box>
-                  <Box pad="medium">
-                    <CheckBox
-                      label="Tresor Public"
-                      name="tresor"
-                      toggle={true}
-                      checked={services.tresor}
-                      onChange={this.handleChangeServices}
-                    />
+                  <Box pad="medium" direction="row">
+                    <Box>
+                      <CheckBox
+                        name="province_sud"
+                        toggle={true}
+                        checked={services.province_sud}
+                        onChange={this.handleChangeServices}
+                      />
+                    </Box>
+                    <Box>
+                      <Image src={provinceSud} style={{ width: '40px' }} />
+                    </Box>
                   </Box>
                 </Box>
               </Columns>

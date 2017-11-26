@@ -8,9 +8,14 @@ import ListItem from 'grommet/components/ListItem';
 import Headline from 'grommet/components/Headline';
 import Paragraph from 'grommet/components/Paragraph';
 import Button from 'grommet/components/Button';
+import Image from 'grommet/components/Image';
 import { Icons } from 'grommet';
 
 import Header from '../../components/Header';
+
+import opt from '../../logos/opt.png';
+import cde from '../../logos/cde.png';
+import dittt from '../../logos/dittt.png';
 
 import './User.scss';
 
@@ -61,7 +66,7 @@ class User extends Component {
               <Box pad="medium">
                 <List>
                   <ListItem justify="between" separator="horizontal">
-                    <span>CDE</span>
+                    <span><Image src={cde} style={{ width: '70px' }} /></span>
                     <span className="secondary">
                       <Box direction="row">
                         <Box pad="small">
@@ -76,7 +81,7 @@ class User extends Component {
                     </span>
                   </ListItem>
                   <ListItem justify="between">
-                    <span>EEC</span>
+                    <span><Image src={dittt} style={{ width: '70px' }} /></span>
                     <span className="secondary">
                       <Box direction="row">
                         <Box pad="small">
@@ -89,20 +94,7 @@ class User extends Component {
                     </span>
                   </ListItem>
                   <ListItem justify="between">
-                    <span>Enercal</span>
-                    <span className="secondary">
-                      <Box direction="row">
-                        <Box pad="small">
-                          <Icons.Base.Download colorIndex="brand" />
-                        </Box>
-                        <Box pad="small">
-                          <Icons.Base.Send colorIndex="brand" />
-                        </Box>
-                      </Box>
-                    </span>
-                  </ListItem>
-                  <ListItem justify="between">
-                    <span>OPT</span>
+                    <span><Image src={opt} style={{ width: '60px' }} /></span>
                     <span className="secondary">
                       <Box direction="row">
                         <Box pad="small">
