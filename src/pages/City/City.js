@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Anchor from 'grommet/components/Anchor';
+import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 import Footer from 'grommet/components/Footer';
 import Heading from 'grommet/components/Heading';
@@ -14,12 +15,12 @@ import Animate from 'grommet/components/Animate';
 import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
 
-import './Address.scss';
+import './City.scss';
 
 import Logo from '../../components/Logo';
 import scriptLoader from '../../libs/scriptLoader';
 
-class AddressMap extends Component {
+class CityMap extends Component {
   locations = [];
 
   state = {
@@ -29,7 +30,7 @@ class AddressMap extends Component {
 
   componentDidMount() {
     const { address: { lat, lng } } = this.props;
-    const element = this.refs.AddressMap.boxContainerRef;
+    const element = this.refs.CityMap.boxContainerRef;
     this.map = new global.google.maps.Map(element, {
       mapTypeId: global.google.maps.MapTypeId.ROADMAP
     });
@@ -49,19 +50,21 @@ class AddressMap extends Component {
   }
 
   handleChange = e => {
-    e.preventDefault();
     const { name, checked } = e.target;
     const { address: { lat, lng } } = this.props;
     this.setState({ [name]: checked }, () => {
-      if(checked) {
+      if (checked) {
         this.map.data.loadGeoJson(
-          `http://10.10.13.213:8000/api/${name}?lat=${lat}&lon=${lng}`, null, data => {
+          `http://10.10.13.213:8000/api/${name}?lat=${lat}&lon=${lng}`,
+          null,
+          data => {
             name === 'school' && this.handleZoom();
             this.locations[name] = data[0];
           }
         );
       } else {
-        this.map.data.contains(this.locations[name]) && this.map.data.remove(this.locations[name]);
+        this.map.data.contains(this.locations[name]) &&
+          this.map.data.remove(this.locations[name]);
       }
     });
   };
@@ -72,7 +75,7 @@ class AddressMap extends Component {
     const bounds = new global.google.maps.LatLngBounds();
 
     map.data.forEach(feature => {
-      AddressMap.processPoints(feature.getGeometry(), bounds.extend, bounds);
+      CityMap.processPoints(feature.getGeometry(), bounds.extend, bounds);
     });
 
     if (!bounds.isEmpty()) {
@@ -90,7 +93,7 @@ class AddressMap extends Component {
       callback.call(ctx, geometry.get());
     } else {
       geometry.getArray().forEach(g => {
-        AddressMap.processPoints(g, callback, ctx);
+        CityMap.processPoints(g, callback, ctx);
       });
     }
   };
@@ -104,7 +107,7 @@ class AddressMap extends Component {
         keep={true}>
         <Heading align="center">{`Selectionnez les services à afficher.`}</Heading>
         <Columns justify="center" size="large">
-          <Box pad="large" ref="AddressMap" className="map" margin="small" />
+          <Box pad="large" ref="CityMap" className="map" margin="small" />
           <Box pad="large" margin="small">
             <List>
               <ListItem justify="between">
@@ -155,14 +158,14 @@ class AddressMap extends Component {
   }
 }
 
-class AddressSearch extends Component {
+class CitySearch extends Component {
   config = {
     componentRestrictions: { country: 'nc' },
     types: ['address']
   };
 
   componentDidMount() {
-    const input = this.refs.AddressSearch.componentRef;
+    const input = this.refs.CitySearch.componentRef;
     this.search = new global.google.maps.places.Autocomplete(
       input,
       this.config
@@ -207,7 +210,7 @@ class AddressSearch extends Component {
           <Box pad="medium">
             <FormField htmlFor="adresses">
               <TextInput
-                ref="AddressSearch"
+                ref="CitySearch"
                 placeholder=""
                 id="address"
                 name="address"
@@ -221,7 +224,7 @@ class AddressSearch extends Component {
   }
 }
 
-class Address extends Component {
+class City extends Component {
   state = {
     map: false
   };
@@ -230,12 +233,16 @@ class Address extends Component {
     this.setState({ map: true, address }, () => {});
   };
 
+  handleAddressBack = () => {
+    this.setState({ map: false });
+  };
+
   render() {
     const { map, address } = this.state;
     let path = '';
 
     return (
-      <div className="Address">
+      <div className="City">
         <Box full={true} flex={false}>
           <Header pad="medium">
             <Box flex={true} justify="start" direction="row">
@@ -258,9 +265,19 @@ class Address extends Component {
           </Header>
           <Box flex={true} justify="center">
             {!map ? (
-              <AddressSearch onAddressChange={this.handleAddressChange} />
+              <CitySearch onAddressChange={this.handleAddressChange} />
             ) : (
-              <AddressMap address={address} />
+              <CityMap address={address} />
+            )}
+          </Box>
+          <Box appCentered size="small">
+            {map && (
+              <Button
+                onClick={this.handleAddressBack}
+                plain={true}
+                label="Retour"
+                align="center"
+              />
             )}
           </Box>
           <Footer justify="between" pad="medium">
@@ -280,7 +297,7 @@ class Address extends Component {
 }
 
 export default scriptLoader(
-  Address,
+  City,
   `${
     global.location.protocol
   }//maps.googleapis.com/maps/api/js?key=AIzaSyAvRqznlG0taAE0_sT7V4kPJxfHOMClegs&libraries=places&language=fr`

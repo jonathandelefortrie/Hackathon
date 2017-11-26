@@ -26,7 +26,7 @@ export default ({ history }) => {
         <Button
           label="Dans ma ville"
           primary={true}
-          onClick={handleRedirect('adresses')}
+          onClick={handleRedirect('ville')}
         />
       </Box>
     </Columns>

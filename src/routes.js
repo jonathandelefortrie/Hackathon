@@ -10,7 +10,7 @@ export default (
         <Route exact path="/" component={pages.Home} />
         <Route path="/user/:document?" component={pages.User} />
         <Route path="/demenage/:type?" component={pages.Move} />
-        <Route path="/adresses/:type?" component={pages.Address} />
+        <Route path="/ville/:type?" component={pages.City} />
       </div>
     </Router>
   </App>

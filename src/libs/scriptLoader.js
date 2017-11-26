@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Box from 'grommet/components/Box';
+import Spinning from 'grommet/components/icons/Spinning';
 
 const scriptLoader = (Wrapped, url) => {
   const script = document.createElement('script');
@@ -31,15 +33,15 @@ const scriptLoader = (Wrapped, url) => {
         return <Wrapped {...this.props} />;
       } else if (script.errored) {
         return (
-          <div className="bp-text-center">
+          <Box flex={true} justify="center">
             An error happended, please reload the page.
-          </div>
+          </Box>
         );
       } else {
         return (
-          <div className="bp-text-center">
-            Loading...
-          </div>
+          <Box flex={true} justify="center">
+            <Spinning />
+          </Box>
         );
       }
     }
