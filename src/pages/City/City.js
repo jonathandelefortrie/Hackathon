@@ -205,7 +205,7 @@ class CitySearch extends Component {
       <Animate
         enter={{ animation: 'fade', duration: 1000, delay: 0 }}
         keep={true}>
-        <Heading align="center">{`Quel est votre localisation?`}</Heading>
+        <Heading align="center">{`Quelle est votre localisation?`}</Heading>
         <Columns justify="center" size="large">
           <Box pad="medium">
             <FormField htmlFor="adresses">
